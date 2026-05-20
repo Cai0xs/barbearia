@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Elite - Agendamento</title>
+    <!-- Importação da Fonte Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>BARBEARIA ELITE</h1>
+            <p>Modernidade e tradição no seu visual</p>
+        </header>
+
+        <main class="card">
+            <!-- SEÇÃO 1: FORMULÁRIO DE AGENDAMENTO -->
+            <div id="section-form">
+                <h2>Agende seu Horário</h2>
+                <p class="subtitle">Preencha todos os campos obrigatórios abaixo</p>
+
+                <form id="form-agendamento" novalidate>
+                    <!-- Mensagem para erros de conexão com o servidor -->
+                    <div id="feedback-message" class="feedback hidden"></div>
+
+                    <div class="form-group">
+                        <label for="nome_cliente">Nome Completo *</label>
+                        <input type="text" id="nome_cliente" name="nome_cliente" required placeholder="Ex: João Silva">
+                        <span class="error-text">O nome completo é obrigatório (mínimo 3 caracteres).</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone_cliente">Telefone de Contato *</label>
+                            <input type="tel" id="telefone_cliente" name="telefone_cliente" required placeholder="(81) 99999-0000" maxlength="15">
+                            <span class="error-text">Insira um telefone válido com DDD.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email_cliente">E-mail *</label>
+                            <input type="email" id="email_cliente" name="email_cliente" required placeholder="exemplo@email.com">
+                            <span class="error-text">Insira um endereço de e-mail válido.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data_agendamento">Data do Serviço *</label>
+                            <input type="date" id="data_agendamento" name="data_agendamento" required>
+                            <span class="error-text">Selecione uma data válida (a partir de hoje).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_agendamento">Horário do Serviço *</label>
+                            <input type="time" id="hora_agendamento" name="hora_agendamento" required>
+                            <span class="error-text">Selecione o horário do atendimento.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico_desejado">Serviço Desejado *</label>
+                        <select id="servico_desejado" name="servico_desejado" required>
+                            <option value="" disabled selected>Selecione um serviço...</option>
+                            <option value="Corte de Cabelo">Corte de Cabelo</option>
+                            <option value="Barba">Barba</option>
+                            <option value="Cabelo + Barba">Cabelo + Barba</option>
+                        </select>
+                        <span class="error-text">Por favor, selecione um serviço.</span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Confirmar Agendamento</button>
+                </form>
+            </div>
+
+            <!-- SEÇÃO 2: TELA DE SUCESSO SPA (Oculta por padrão) -->
+            <div id="section-success" class="success-screen hidden">
+                <div class="success-icon-wrapper">
+                    <div class="success-icon">
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+                <h2>Sucesso!</h2>
+                <p>Seu agendamento foi confirmado e enviado ao sistema.</p>
+                <button id="btn-novo-agendamento" class="btn-submit btn-secondary">Novo Agendamento</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

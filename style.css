@@ -1,0 +1,258 @@
+/* Reset padrão de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333333; /* Texto Escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+}
+
+/* Header da Barbearia */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #333333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #DAA520; /* Dourado */
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Card Principal (Container da SPA) */
+.card {
+    background-color: #FFFFFF; /* Branco */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #DAA520; /* Detalhe Superior Dourado */
+    position: relative;
+    overflow: hidden;
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.card .subtitle {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+/* Estrutura de Formulários */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #DAA520;
+    box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
+}
+
+/* Botões */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #333333; /* Fundo Escuro */
+    color: #DAA520; /* Texto Dourado */
+    border: 2px solid #DAA520;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #DAA520;
+    color: #333333;
+}
+
+/* Mensagens de Erro de Validação */
+.error-text {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.invalid input, .invalid select {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.invalid .error-text {
+    display: block;
+}
+
+/* Caixa de Erro Geral (API) */
+.feedback {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Controladores Visuais SPA --- */
+.hidden {
+    display: none !important;
+}
+
+/* Tela de Sucesso */
+.success-screen {
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.success-screen h2 {
+    color: #DAA520;
+    font-size: 2.2rem;
+    margin: 15px 0 10px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.success-screen p {
+    color: #666666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Ícone Animado do Visto (V) */
+.success-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #DAA520;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.4);
+}
+
+.checkmark {
+    display: inline-block;
+    width: 22px;
+    height: 40px;
+    border: solid #FFFFFF;
+    border-width: 0 5px 5px 0;
+    transform: rotate(45deg);
+    margin-top: -5px;
+    animation: stroke 0.4s ease-in-out forwards;
+}
+
+/* Botão Secundário para Novo Fluxo */
+.btn-secondary {
+    background-color: transparent;
+    color: #333333;
+    border: 2px solid #333333;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.btn-secondary:hover {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+/* Animações CSS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stroke {
+    from { height: 0; width: 0; opacity: 0; }
+    to { height: 40px; width: 22px; opacity: 1; }
+}
+
+/* Responsividade para Dispositivos Móveis */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .card {
+        padding: 25px 20px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}
